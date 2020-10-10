@@ -1,10 +1,20 @@
-import React from 'react'
-
-import { ExampleComponent } from 'bubo'
-import 'bubo/dist/index.css'
+import React, { useEffect } from 'react'
+import { Screen, useStore } from 'bubo'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  const [data, setData] = useStore('data')
+
+  const onClick = () => {
+    setData({
+      counter: (data?.counter || 0) + 1,
+    })
+  }
+
+  useEffect(() => {
+    return () => false;
+  })
+
+  return <Screen text={`click # ${data?.counter}`} onClick={onClick} />
 }
 
 export default App

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Screen, useStore } from 'bubo'
+import { Screen, useStore } from 'bubo-react'
 
 const App = () => {
   const [data, setData] = useStore('data')
